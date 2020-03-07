@@ -1,0 +1,3 @@
+MNT_DIR=/mnt/sdfs
+LOG_FILE=/usr/local/bin/fuse_test-master/gdtnfs.log
+CONFIG_FILE=/usr/local/bin/fuse_test-master/gdtnfs.conf

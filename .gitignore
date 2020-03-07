@@ -1,0 +1,11 @@
+passthrough
+passthrough.log
+gdtnfs
+gdtnfs.log
+gdtnfs.conf
+__pycache__
+.vscode/*
+.cache/*
+test/.cache/*
+tools/*
+config.sh
