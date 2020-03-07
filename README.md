@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # DIY-SDFS (DIY-Sensor Data File System)
 
 A NAS Integrated File System for On-site IoT Data Storage
