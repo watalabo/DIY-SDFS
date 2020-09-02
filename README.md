@@ -111,14 +111,14 @@ It is necessary to compile the program, describe the environment settings and co
 # DIY-SDFS directory
 
 DIY-SDFS
-├── compile.sh         # Compile script
-├── config.sh.sample   # config.sh sample
-├── gdtnfs.conf.sample # gdtnfs.conf sample
-├── gdtnfs.cpp         # DIY-SDFS source code
-├── mount.sh           # DIY-SDFS mount script
+├── compile.sh           # Compile script
+├── config.sh.sample     # config.sh sample
+├── diy-sdfs.conf.sample # diy-sdfs.conf sample
+├── diy-sdfs.cpp         # DIY-SDFS source code
+├── mount.sh             # DIY-SDFS mount script
 ├── README.md
-├── umount.sh          # DIY-SDFS unmount script
-└── util/              # FUSE utility directory
+├── umount.sh            # DIY-SDFS unmount script
+└── util/                # FUSE utility directory
 
 ```
 
@@ -130,7 +130,7 @@ It is necessary to prepare environment setting file (config.sh) and setting file
 $ git clone https://github.com/watalabo/DIY-SDFS.git
 $ cd DIY-SDFS
 $ cp config.sh.sample config.sh
-$ cp gdtnfs.conf.sample gdtnfs.conf
+$ cp diy-sdfs.conf.sample diy-sdfs.conf
 ```
 
 It is necessary to describe the environment setting file (config.sh).
@@ -139,16 +139,16 @@ Describe the following three points in this file with absolute paths.
 * DIY-SDFS mount point (MNT_DIR)
     * ex.）`/mnt/sdfs`
 * Log file location (LOG_FILE)
-    * ex.）`/home/user/fuse_test-master/gdtnfs.log`
+    * ex.）`/var/log/diy-sdfs.log`
 * Configuration file location (CONFIG_FILE)
-    * ex.）`/home/user/fuse_test-master/gdtnfs.conf`
+    * ex.）`/usr/local/bin/DIY-SDFS/diy-sdfs.conf`
 
 ```
 $ vim config.sh
 -----config.sh-----
 MNT_DIR=/mnt/sdfs
-LOG_FILE=/home/user/fuse_test-master/gdtnfs.log
-CONFIG_FILE=/home/user/fuse_test-master/gdtnfs.conf
+LOG_FILE=/var/log/diy-sdfs.log
+CONFIG_FILE=/usr/local/bin/DIY-SDFS/diy-sdfs.conf
 -----config.sh-----
 ```
 
@@ -172,7 +172,7 @@ The compile script describes the following compile commands.
 
 ```
 # compile
-$ ./compile.sh gdtnfs
+$ ./compile.sh diy-sdfs
 ```
 
 

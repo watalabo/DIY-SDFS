@@ -4,7 +4,7 @@ source ./config.sh
 mountpoint -q ${MNT_DIR} && ./umount.sh
 
 ## single thread
-./gdtnfs -s -o auto_unmount,allow_other,logfile=${LOG_FILE},configfile=${CONFIG_FILE} ${MNT_DIR}
+./diy-sdfs -s -o auto_unmount,allow_other,logfile=${LOG_FILE},configfile=${CONFIG_FILE} ${MNT_DIR}
 ####./gdtnfs -s -d -o auto_unmount,allow_other,logfile=${LOG_FILE},configfile=${CONFIG_FILE} ${MNT_DIR}
 #./gdtnfs -s -f -o auto_unmount,allow_other,logfile=${LOG_FILE},configfile=${CONFIG_FILE} ${MNT_DIR}
 
