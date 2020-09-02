@@ -1,3 +1,3 @@
 MNT_DIR=/mnt/sdfs
-LOG_FILE=/usr/local/bin/DIY-SDFS/gdtnfs.log
-CONFIG_FILE=/usr/local/bin/DIY-SDFS/gdtnfs.conf
+LOG_FILE=/usr/local/bin/DIY-SDFS/diy-sdfs.log
+CONFIG_FILE=/usr/local/bin/DIY-SDFS/diy-sdfs.conf
