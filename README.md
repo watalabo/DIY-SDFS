@@ -4,16 +4,15 @@ A NAS Integrated File System for On-site IoT Data Storage
 
 ## About
 
-We propose a Network Attached Storag (NAS) integrated file system called the “Sensor Data File System (SDFS)”, which has advantages of being on-site, low-cost, and highly scalable. 
+We propose a Network Attached Storage (NAS) integrated file system called the “Do It Yourself-Sensor Data File System (DIY-SDFS)”, which has advantages of being on-site, low-cost, and highly scalable. 
 
-We developed the SDFS using FUSE (libfuse library), which is an interface for implementing file systems in user-space. SDFS not only allows multiple NAS to be treated as a single file system but also has functions that facilitate the ease of the addition of storage.
+We developed the DIY-SDFS using FUSE (Filesystem in Userspace), which is an interface for implementing file systems in user-space. DIY-SDFS not only allows multiple NAS to be treated as a single file system but also has functions that facilitate the ease of the addition of storage.
 
 <img src="https://github.com/okayu1230z/data_field/blob/master/png/virtual_file_system.png" alt="vfs" title="Virtual File System">
 
 ## Overview of DIY-SDFS
 
-
-SDFS has the following five features for the efficient management of time-series IoT data.
+DIY-SDFS has the following five features for the efficient management of time-series IoT data.
 1) Multiple NAS can be handled as one file system.
 2) Users can add a new NAS simply by rewriting the configuration file.
 3) When the remaining capacity of the NAS decreases, it is automatically saved on another NAS.
@@ -23,7 +22,6 @@ SDFS has the following five features for the efficient management of time-series
 <img src="https://github.com/okayu1230z/data_field/blob/master/png/diy-sdfs_arc.png" alt="diy-sdfs_arch" title="DIY-SDFS architecture">
 
 
-
 ## Supported Platforms
 
 - Linux (Ubuntu 16.04, 18.04)
@@ -31,7 +29,7 @@ SDFS has the following five features for the efficient management of time-series
 ## Installation
 ### Installation libfuse
 
-FUSE Library is required to run DIY-SDFS.
+FUSE Library is required to build DIY-SDFS.
 Please configure DIY-SDFS after installing the library.
 
 ```
@@ -124,7 +122,7 @@ DIY-SDFS
 
 ### Environmental setting
 
-It is necessary to prepare environment setting file (config.sh) and setting file (gdtnfs.conf).
+It is necessary to prepare environment setting file (config.sh) and setting file (diy-sdfs.conf).
 
 ```
 $ git clone https://github.com/watalabo/DIY-SDFS.git
@@ -141,28 +139,28 @@ Describe the following three points in this file with absolute paths.
 * Log file location (LOG_FILE)
     * ex.）`/var/log/diy-sdfs.log`
 * Configuration file location (CONFIG_FILE)
-    * ex.）`/usr/local/bin/DIY-SDFS/diy-sdfs.conf`
+    * ex.）`/etc/diy-sdfs.conf`
 
 ```
 $ vim config.sh
 -----config.sh-----
 MNT_DIR=/mnt/sdfs
 LOG_FILE=/var/log/diy-sdfs.log
-CONFIG_FILE=/usr/local/bin/DIY-SDFS/diy-sdfs.conf
+CONFIG_FILE=/etc/diy-sdfs.conf
 -----config.sh-----
 ```
 
-Describe the configuration file (gdtnfs.conf). See the paper for details of this file.
+Describe the configuration file (diy-sdfs.conf). See the paper for details of this file.
 
 In this example, it is assumed that three NAS units are mounted on `/mnt/nas01`, `/mnt/nas02` and `/mnt/nas03`, respectively.
 
 ```
-$ vim gdtnfs.conf
------gdtnfs.conf-----
+$ vim diy-sdfs.conf
+-----diy-sdfs.conf-----
 /*/2017 /mnt/nas01
 /*/2018 /mnt/nas02
 /*/2019 /mnt/nas03
------gdtnfs.conf-----
+-----diy-sdfs.conf-----
 ```
 
 ### Compilation DIY-SDFS
@@ -186,7 +184,7 @@ $ ./mount.sh
 ```
 
 In the execution script, DIY-SDFS is executed with the following options.
-* ./gdtnfs：DIY-SDFS executable
+* ./diy-sdfs：DIY-SDFS executable
 
 * option
     * -s：DIY-SDFS (FUSE program) runs in a single thread
